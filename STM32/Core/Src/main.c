@@ -96,7 +96,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	//HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	setTimer1(100);
-	setTimer2(100);
+
 	while (1) {
 		if (timer1_flag == 1) {
 			setTimer2(100);
