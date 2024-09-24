@@ -166,8 +166,8 @@ int main(void)
  80001b4:	2140      	movs	r1, #64	; 0x40
  80001b6:	4807      	ldr	r0, [pc, #28]	; (80001d4 <main+0x88>)
  80001b8:	f000 fea8 	bl	8000f0c <HAL_GPIO_WritePin>
-			display7SEG(2);
- 80001bc:	2002      	movs	r0, #2
+			display7SEG(1);
+ 80001bc:	2001      	movs	r0, #1
  80001be:	f000 f955 	bl	800046c <display7SEG>
 			timer2_flag = 0;
  80001c2:	4b05      	ldr	r3, [pc, #20]	; (80001d8 <main+0x8c>)
