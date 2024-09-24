@@ -43,33 +43,11 @@ void timerRun2() {
 		}
 	}
 }
-void setTimer3(int duration) {
-	timer3_counter = duration;
-	timer3_flag = 0;
-}
-void timerRun3() {
-	if (timer3_counter > 0) {
-		timer3_counter--;
-
-		if (timer3_counter <= 0) {
-			timer3_flag = 1;
-
-		}
-	}
-}
-void setTimer4(int duration) {
-	timer4_counter = duration;
-	timer4_flag = 0;
-}
-void timerRun4() {
-	if (timer4_counter > 0) {
-		timer4_counter--;
-
-		if (timer4_counter <= 0) {
-			timer4_flag = 1;
-
-		}
-	}
+void turnoffLEDs() {
+    HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+    HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
+    HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+    HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
 }
 void display7SEG(int num) {
 	switch (num) {
