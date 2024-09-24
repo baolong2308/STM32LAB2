@@ -94,14 +94,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(120);
+  setTimer1(100);
     while (1)
     {
       /* USER CODE END WHILE */
   	  if(timer1_flag==1){
 
   		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-  		  setTimer1(120);
+  		  setTimer1(100);
   	  }
       /* USER CODE BEGIN 3 */
     }
