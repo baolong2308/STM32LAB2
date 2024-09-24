@@ -8,14 +8,12 @@
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
-extern int timer1_flag;
-extern int timer2_flag;
-extern int timer3_flag;
-extern int timer4_flag;
+extern int timer_flag[];
+extern int timer_counter[];
 void display7SEG(int num);
-void setTimer1(int duration);
-void timerRun1();
-void setTimer2(int duration);
-void timerRun2();
+void setTimer(int index,int value);
+int isTimerExpired(int index);
+void timerRun();
+
 void turnoffLEDs() ;
 #endif /* INC_SOFTWARE_TIMER_H_ */
