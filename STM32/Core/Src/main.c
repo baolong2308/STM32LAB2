@@ -109,7 +109,7 @@ int main(void)
 			setTimer1(100);
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-			display7SEG(1);
+			display7SEG(2);
 			timer2_flag = 0;
 		}
     /* USER CODE END WHILE */
