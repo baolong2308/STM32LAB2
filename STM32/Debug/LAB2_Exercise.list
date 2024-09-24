@@ -113,8 +113,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(120);
- 8000160:	2078      	movs	r0, #120	; 0x78
+  setTimer1(100);
+ 8000160:	2064      	movs	r0, #100	; 0x64
  8000162:	f000 f8db 	bl	800031c <setTimer1>
     while (1)
     {
@@ -129,8 +129,8 @@ int main(void)
  800016e:	2120      	movs	r1, #32
  8000170:	4804      	ldr	r0, [pc, #16]	; (8000184 <main+0x38>)
  8000172:	f000 fcb3 	bl	8000adc <HAL_GPIO_TogglePin>
-  		  setTimer1(120);
- 8000176:	2078      	movs	r0, #120	; 0x78
+  		  setTimer1(100);
+ 8000176:	2064      	movs	r0, #100	; 0x64
  8000178:	f000 f8d0 	bl	800031c <setTimer1>
   	  if(timer1_flag==1){
  800017c:	e7f3      	b.n	8000166 <main+0x1a>
