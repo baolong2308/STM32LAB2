@@ -94,8 +94,8 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	setTimer(0,1);
-	setTimer(1,100);
+	setTimer(0,1);		//timer LED
+	setTimer(1,100);	// timer DOT
 	int status = 0;
 
 	while (1) {
@@ -106,7 +106,6 @@ int main(void) {
 			switch (status) {
 			case 0:
 				HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
-
 				display7SEG(1);
 				break;
 			case 1:
@@ -115,7 +114,6 @@ int main(void) {
 				break;
 			case 2:
 				HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
-
 				display7SEG(3);
 				break;
 			case 3:

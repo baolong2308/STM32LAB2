@@ -118,11 +118,11 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	setTimer(0,1);
+	setTimer(0,1);		//timer LED
  8000168:	2101      	movs	r1, #1
  800016a:	2000      	movs	r0, #0
  800016c:	f000 f950 	bl	8000410 <setTimer>
-	setTimer(1,100);
+	setTimer(1,100);	// timer DOT
  8000170:	2164      	movs	r1, #100	; 0x64
  8000172:	2001      	movs	r0, #1
  8000174:	f000 f94c 	bl	8000410 <setTimer>
@@ -160,7 +160,6 @@ int main(void) {
  80001b2:	2140      	movs	r1, #64	; 0x40
  80001b4:	481f      	ldr	r0, [pc, #124]	; (8000234 <main+0xe8>)
  80001b6:	f000 fef9 	bl	8000fac <HAL_GPIO_WritePin>
-
 				display7SEG(1);
  80001ba:	2001      	movs	r0, #1
  80001bc:	f000 f9a6 	bl	800050c <display7SEG>
@@ -183,7 +182,6 @@ int main(void) {
  80001d6:	f44f 7180 	mov.w	r1, #256	; 0x100
  80001da:	4816      	ldr	r0, [pc, #88]	; (8000234 <main+0xe8>)
  80001dc:	f000 fee6 	bl	8000fac <HAL_GPIO_WritePin>
-
 				display7SEG(3);
  80001e0:	2003      	movs	r0, #3
  80001e2:	f000 f993 	bl	800050c <display7SEG>
