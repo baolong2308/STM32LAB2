@@ -132,7 +132,6 @@ int main(void) {
 		if (isTimerExpired(0) == 1) {
 			setTimer(0, 20);
 			turnoffLEDs();
-
 			switch (status) {
 			case 0:
 				update7SEG(status);
