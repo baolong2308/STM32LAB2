@@ -57,10 +57,11 @@ static void MX_TIM2_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 const int MAX_LED = 4;
-int index_led = 0;
+unsigned int index_led = 0;
 int led_buffer[4] = { 1, 2, 3, 4 };
-void update7SEG(int index) {
 
+void update7SEG(int index) {
+	turnoffLEDs();
 	switch (index) {
 
 	case 0:
@@ -124,35 +125,8 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	setTimer(0, 1);		//timer LED
 	setTimer(1, 100);	// timer DOT
-	int status = 0;
-
 	while (1) {
-		if (isTimerExpired(0) == 1) {
-			setTimer(0, 100);
-			turnoffLEDs();
-			switch (status) {
-			case 0:
-				update7SEG(status);
-				break;
-			case 1:
-				update7SEG(status);
-				break;
-			case 2:
-				update7SEG(status);
-				break;
-			case 3:
-				update7SEG(status);
-				break;
-			}
-			status = (status + 1) % 4;
-
-		}
-		if (isTimerExpired(1) == 1) {
-			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-			setTimer(1, 100);
-		}
 
 		/* USER CODE END WHILE */
 
@@ -278,8 +252,26 @@ static void MX_GPIO_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
+int counter_led = 100; //500ms
+int counter_dot = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	timerRun();
+	if (counter_led > 0) {
+		counter_led--;
+		update7SEG(index_led);
+		if (counter_led <= 0) {
+			counter_led = 50;
+			index_led++;
+			if (index_led >= MAX_LED)
+				index_led = 0;
+		}
+	}
+	if (counter_dot > 0) {
+		counter_dot--;
+		if (counter_dot <= 0) {
+			counter_dot = 100;
+			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+		}
+	}
 
 }
 /* USER CODE END 4 */
