@@ -130,7 +130,7 @@ int main(void) {
 
 	while (1) {
 		if (isTimerExpired(0) == 1) {
-			setTimer(0, 50);
+			setTimer(0, 100);
 			turnoffLEDs();
 			switch (status) {
 			case 0:
