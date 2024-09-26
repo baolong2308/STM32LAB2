@@ -554,9 +554,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  80003ea:	681b      	ldr	r3, [r3, #0]
  80003ec:	2b00      	cmp	r3, #0
  80003ee:	dc0f      	bgt.n	8000410 <HAL_TIM_PeriodElapsedCallback+0x4c>
-			counter_led = 50;
+			counter_led = 100;
  80003f0:	4b13      	ldr	r3, [pc, #76]	; (8000440 <HAL_TIM_PeriodElapsedCallback+0x7c>)
- 80003f2:	2232      	movs	r2, #50	; 0x32
+ 80003f2:	2264      	movs	r2, #100	; 0x64
  80003f4:	601a      	str	r2, [r3, #0]
 			index_led++;
  80003f6:	4b13      	ldr	r3, [pc, #76]	; (8000444 <HAL_TIM_PeriodElapsedCallback+0x80>)
