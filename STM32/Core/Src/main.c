@@ -56,7 +56,37 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+const int MAX_LED = 4;
+int index_led = 0;
+int led_buffer[4] = { 1, 2, 3, 4 };
+void update7SEG(int index) {
 
+	switch (index) {
+
+	case 0:
+		// Display the first 7 SEG with led_buffer [0]
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
+		display7SEG(led_buffer[0]);
+		break;
+	case 1:
+		// Display the second 7 SEG with led_buffer [1]
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
+		display7SEG(led_buffer[1]);
+		break;
+	case 2:
+		// Display the third 7 SEG with led_buffer [2]
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
+		display7SEG(led_buffer[2]);
+		break;
+	case 3:
+		// Display the forth 7 SEG with led_buffer [3]'
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
+		display7SEG(led_buffer[3]);
+		break;
+	default:
+		break;
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,31 +124,27 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 
-	setTimer(0,1);		//timer LED
-	setTimer(1,100);	// timer DOT
+	setTimer(0, 1);		//timer LED
+	setTimer(1, 100);	// timer DOT
 	int status = 0;
 
 	while (1) {
 		if (isTimerExpired(0) == 1) {
-			setTimer(0,50);
+			setTimer(0, 20);
 			turnoffLEDs();
 
 			switch (status) {
 			case 0:
-				HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
-				display7SEG(1);
+				update7SEG(status);
 				break;
 			case 1:
-				HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
-				display7SEG(2);
+				update7SEG(status);
 				break;
 			case 2:
-				HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
-				display7SEG(3);
+				update7SEG(status);
 				break;
 			case 3:
-				HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
-				display7SEG(0);
+				update7SEG(status);
 				break;
 			}
 			status = (status + 1) % 4;
@@ -126,7 +152,7 @@ int main(void) {
 		}
 		if (isTimerExpired(1) == 1) {
 			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-			setTimer(1,100);
+			setTimer(1, 100);
 		}
 
 		/* USER CODE END WHILE */
