@@ -652,7 +652,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  80004a0:	af00      	add	r7, sp, #0
  80004a2:	6078      	str	r0, [r7, #4]
 
-	// Gọi hàm update7SEG để hiển thị từng giá trị trên LED 7 đoạn
 	if (counter_led > 0) {
  80004a4:	4b1c      	ldr	r3, [pc, #112]	; (8000518 <HAL_TIM_PeriodElapsedCallback+0x7c>)
  80004a6:	681b      	ldr	r3, [r3, #0]
@@ -689,7 +688,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  80004da:	681b      	ldr	r3, [r3, #0]
  80004dc:	2b03      	cmp	r3, #3
  80004de:	dd02      	ble.n	80004e6 <HAL_TIM_PeriodElapsedCallback+0x4a>
-				index_led = 0;  // Reset lại khi quét hết 4 LED
+				index_led = 0;
  80004e0:	4b0e      	ldr	r3, [pc, #56]	; (800051c <HAL_TIM_PeriodElapsedCallback+0x80>)
  80004e2:	2200      	movs	r2, #0
  80004e4:	601a      	str	r2, [r3, #0]
