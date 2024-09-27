@@ -126,6 +126,7 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 
 	setTimer(1, 100);	// timer DOT
+
 	while (1) {
 
 		/* USER CODE END WHILE */
@@ -252,14 +253,14 @@ static void MX_GPIO_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
-int counter_led = 50; //500ms
+int counter_led = 100; //500ms
 int counter_dot = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (counter_led > 0) {
 		counter_led--;
 		update7SEG(index_led);
 		if (counter_led <= 0) {
-			counter_led = 50;
+			counter_led = 100;
 			index_led++;
 			if (index_led >= MAX_LED)
 				index_led = 0;
