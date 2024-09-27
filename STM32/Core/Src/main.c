@@ -289,7 +289,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (counter_dot > 0) {
 		counter_dot--;
 		if (counter_dot <= 0) {
-			counter_dot = 100;
+			counter_dot = 10;
 			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		}
 	}
