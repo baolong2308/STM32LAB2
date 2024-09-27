@@ -362,9 +362,9 @@ int main(void) {
  8000304:	681b      	ldr	r3, [r3, #0]
  8000306:	2b03      	cmp	r3, #3
  8000308:	dd02      	ble.n	8000310 <main+0xac>
-				index_led = 0;
+				index_led = 1;
  800030a:	4b0d      	ldr	r3, [pc, #52]	@ (8000340 <main+0xdc>)
- 800030c:	2200      	movs	r2, #0
+ 800030c:	2201      	movs	r2, #1
  800030e:	601a      	str	r2, [r3, #0]
 			}
 		}
