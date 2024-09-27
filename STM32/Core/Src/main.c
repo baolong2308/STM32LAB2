@@ -277,34 +277,32 @@ static void MX_GPIO_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
-int timer1_flag = 1;
-int timer1_counter = 100;
-int timer2_flag = 0;
+
+int timer1_counter = 50;
+
 int timer2_counter = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (timer1_counter > 0) {
 		timer1_counter--;
 
-		if (timer1_counter <= 0 && timer1_flag == 1) {
+		if (timer1_counter <= 0 ) {
 
 			timer2_counter = 50;
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
 			display7SEG(1);
-			timer1_flag = 0;
-			timer2_flag = 1;
+
 		}
 	}
 	if (timer2_counter > 0) {
 		timer2_counter--;
 
-		if (timer2_counter <= 0 && timer2_flag == 1) {
+		if (timer2_counter <= 0 ) {
 			timer1_counter = 50;
 			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
 			display7SEG(2);
-			timer2_flag = 0;
-			timer1_flag = 1;
+
 
 		}
 	}
