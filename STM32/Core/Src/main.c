@@ -66,33 +66,32 @@ void updateClockBuffer() {
 	led_buffer[2] = minute / 10;
 	led_buffer[3] = minute % 10;
 }
-void update7SEG(int index) {
-	turnoffLEDs();
+const int MAX_LED_MATRIX = 8;
+int index_led_matrix = 0;
+uint8_t matrix_buffer[8] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
+void updateLEDMatrix(int index) {
 	switch (index) {
-
 	case 0:
-		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
-		display7SEG(led_buffer[0]);
 		break;
 	case 1:
-
-		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
-		display7SEG(led_buffer[1]);
 		break;
 	case 2:
-
-		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
-		display7SEG(led_buffer[2]);
 		break;
 	case 3:
-
-		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
-		display7SEG(led_buffer[3]);
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	case 7:
 		break;
 	default:
 		break;
 	}
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -141,7 +140,6 @@ int main(void) {
 				minute++;
 
 			}
-			/* USER CODE END WHILE */
 			if (minute >= 60) {
 				minute = 0;
 				hour++;
@@ -160,6 +158,8 @@ int main(void) {
 			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 			setTimer(1, 100);
 		}
+		/* USER CODE END WHILE */
+
 		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
