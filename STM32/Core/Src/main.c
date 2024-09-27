@@ -71,7 +71,6 @@ void update7SEG(int index) {
 	switch (index) {
 
 	case 0:
-
 		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
 		display7SEG(led_buffer[0]);
 		break;
@@ -130,7 +129,6 @@ int main(void) {
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
-
 
 	while (1) {
 		second++;
@@ -272,14 +270,29 @@ static void MX_GPIO_Init(void) {
 
 /* USER CODE BEGIN 4 */
 
-
+int counter_dot = 100;
+int counter_led = 50;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	// Gọi hàm update7SEG để hiển thị từng giá trị trên LED 7 đoạn
-	update7SEG(index_led);
-	index_led++;
-	if (index_led >= 4) {
-		index_led = 0;  // Reset lại khi quét hết 4 LED
+	if (counter_led > 0) {
+		counter_led--;
+		if (counter_led <= 0) {
+			counter_led = 0;
+			update7SEG(index_led);
+			index_led++;
+			if (index_led >= 4) {
+				index_led = 0;  // Reset lại khi quét hết 4 LED
+			}
+		}
+	}
+
+	if (counter_dot > 0) {
+		counter_dot--;
+		if (counter_dot <= 0) {
+			counter_dot = 100;
+			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+		}
 	}
 
 }
