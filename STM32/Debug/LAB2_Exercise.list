@@ -16,9 +16,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
   5 .preinit_array 00000000  08001de4  08001de4  00003024  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   6 .init_array   00000004  08001de4  08001de4  00002de4  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
   7 .fini_array   00000004  08001de8  08001de8  00002de8  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
   8 .data         00000024  20000000  08001dec  00003000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .bss          0000006c  20000024  08001e10  00003024  2**2
