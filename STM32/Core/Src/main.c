@@ -148,7 +148,7 @@ int main(void) {
 				hour = 0;
 			}
 			updateClockBuffer();
-			update7SEG(index_led);
+			//update7SEG(index_led);
 			index_led++;
 			if (index_led >= 4) {
 				index_led = 0;
