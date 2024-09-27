@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00004018  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00007e8e  00000000  00000000  00004041  2**0
+ 12 .debug_info   00007e6c  00000000  00000000  00004041  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001819  00000000  00000000  0000becf  2**0
+ 13 .debug_abbrev 00001804  00000000  00000000  0000bead  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000988  00000000  00000000  0000d6e8  2**3
+ 14 .debug_aranges 00000988  00000000  00000000  0000d6b8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 00000757  00000000  00000000  0000e070  2**0
+ 15 .debug_rnglists 00000757  00000000  00000000  0000e040  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001653d  00000000  00000000  0000e7c7  2**0
+ 16 .debug_macro  0001653d  00000000  00000000  0000e797  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a15a  00000000  00000000  00024d04  2**0
+ 17 .debug_line   0000a15a  00000000  00000000  00024cd4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082396  00000000  00000000  0002ee5e  2**0
+ 18 .debug_str    0008237e  00000000  00000000  0002ee2e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000b11f4  2**0
+ 19 .comment      00000043  00000000  00000000  000b11ac  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000026fc  00000000  00000000  000b1238  2**2
+ 20 .debug_frame  000026fc  00000000  00000000  000b11f0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000054  00000000  00000000  000b3934  2**0
+ 21 .debug_line_str 00000054  00000000  00000000  000b38ec  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -705,8 +705,7 @@ static void MX_GPIO_Init(void) {
 
 /* USER CODE BEGIN 4 */
 
-int counter_dot = 100;
-int counter_led = 50;
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  8000500:	b580      	push	{r7, lr}
  8000502:	b082      	sub	sp, #8
