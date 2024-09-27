@@ -155,7 +155,6 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 	//HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 
-
 	while (1) {
 
 		/* USER CODE END WHILE */
@@ -256,8 +255,8 @@ static void MX_GPIO_Init(void) {
 
 	/*Configure GPIO pin Output Level */
 	HAL_GPIO_WritePin(GPIOB,
-			SEG0_Pin | SEG1_Pin | SEG2_Pin | SEG3_Pin | SEG4_Pin | SEG5_Pin
-					| SEG6_Pin, GPIO_PIN_RESET);
+	SEG0_Pin | SEG1_Pin | SEG2_Pin | SEG3_Pin | SEG4_Pin | SEG5_Pin | SEG6_Pin,
+			GPIO_PIN_RESET);
 
 	/*Configure GPIO pins : EN0_Pin EN1_Pin */
 	GPIO_InitStruct.Pin = EN0_Pin | EN1_Pin;
