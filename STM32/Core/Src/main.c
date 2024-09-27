@@ -153,7 +153,7 @@ int main(void) {
 			update7SEG(index_led);
 			index_led++;
 			if (index_led >= 4) {
-				index_led = 1;
+				index_led = 0;
 			}
 		}
 		if (isTimerExpired(1) == 1) {
