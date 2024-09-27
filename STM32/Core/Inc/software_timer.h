@@ -12,5 +12,5 @@ void setTimer(int index, int value);
 int isTimerExpired(int index);
 void timerRun();
 void turnoffLEDs();
-void display7SEG(int num);
+void display7SEG(int num)
 #endif /* INC_SOFTWARE_TIMER_H_ */
