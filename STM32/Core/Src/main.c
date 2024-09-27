@@ -274,7 +274,6 @@ int counter_dot = 100;
 int counter_led = 50;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
-	// Gọi hàm update7SEG để hiển thị từng giá trị trên LED 7 đoạn
 	if (counter_led > 0) {
 		counter_led--;
 		if (counter_led <= 0) {
@@ -282,7 +281,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 			update7SEG(index_led);
 			index_led++;
 			if (index_led >= 4) {
-				index_led = 0;  // Reset lại khi quét hết 4 LED
+				index_led = 0;
 			}
 		}
 	}
