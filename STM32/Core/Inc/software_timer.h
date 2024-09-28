@@ -4,7 +4,7 @@
  *  Created on: Sep 24, 2024
  *      Author: admin
  */
-
+#include"main.h"
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
@@ -21,7 +21,8 @@ void timerRun();
 
 void turnoffLEDs() ;
 
-void displayLEDMATRIX(int index);
+void displayLEDMATRIX(int row, uint8_t col);
 
+void offrow_LEDMATRIX() ;
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

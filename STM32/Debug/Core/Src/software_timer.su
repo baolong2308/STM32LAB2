@@ -1,6 +1,7 @@
 ../Core/Src/software_timer.c:13:6:setTimer	16	static
 ../Core/Src/software_timer.c:17:5:isTimerExpired	16	static
 ../Core/Src/software_timer.c:24:6:timerRun	16	static
-../Core/Src/software_timer.c:35:6:displayLEDMATRIX	16	static
-../Core/Src/software_timer.c:38:6:turnoffLEDs	8	static
-../Core/Src/software_timer.c:44:6:display7SEG	16	static
+../Core/Src/software_timer.c:36:6:offrow_LEDMATRIX	8	static
+../Core/Src/software_timer.c:48:6:displayLEDMATRIX	16	static
+../Core/Src/software_timer.c:89:6:turnoffLEDs	8	static
+../Core/Src/software_timer.c:95:6:display7SEG	16	static
