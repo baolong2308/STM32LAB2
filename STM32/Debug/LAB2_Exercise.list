@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016545  00000000  00000000  0000d83b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a1fe  00000000  00000000  00023d80  2**0
+ 17 .debug_line   0000a216  00000000  00000000  00023d80  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000823b2  00000000  00000000  0002df7e  2**0
+ 18 .debug_str    000823b2  00000000  00000000  0002df96  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000b0330  2**0
+ 19 .comment      00000043  00000000  00000000  000b0348  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002764  00000000  00000000  000b0374  2**2
+ 20 .debug_frame  00002764  00000000  00000000  000b038c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000054  00000000  00000000  000b2ad8  2**0
+ 21 .debug_line_str 00000054  00000000  00000000  000b2af0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -194,56 +194,56 @@ void Shiftleft_Maxtrix(uint8_t *buffer) {
  8000202:	b083      	sub	sp, #12
  8000204:	af00      	add	r7, sp, #0
  8000206:	6078      	str	r0, [r7, #4]
-	matrix_buffer[0] <<= 1;
+	matrix_buffer[0] = matrix_buffer[0] << 1;
  8000208:	4b1a      	ldr	r3, [pc, #104]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800020a:	781b      	ldrb	r3, [r3, #0]
  800020c:	005b      	lsls	r3, r3, #1
  800020e:	b2da      	uxtb	r2, r3
  8000210:	4b18      	ldr	r3, [pc, #96]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000212:	701a      	strb	r2, [r3, #0]
-	matrix_buffer[1] <<= 1;
+	matrix_buffer[1] = matrix_buffer[1] << 1;
  8000214:	4b17      	ldr	r3, [pc, #92]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000216:	785b      	ldrb	r3, [r3, #1]
  8000218:	005b      	lsls	r3, r3, #1
  800021a:	b2da      	uxtb	r2, r3
  800021c:	4b15      	ldr	r3, [pc, #84]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800021e:	705a      	strb	r2, [r3, #1]
-	matrix_buffer[2] <<= 1;
+	matrix_buffer[2] = matrix_buffer[2] << 1;
  8000220:	4b14      	ldr	r3, [pc, #80]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000222:	789b      	ldrb	r3, [r3, #2]
  8000224:	005b      	lsls	r3, r3, #1
  8000226:	b2da      	uxtb	r2, r3
  8000228:	4b12      	ldr	r3, [pc, #72]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800022a:	709a      	strb	r2, [r3, #2]
-	matrix_buffer[3] <<= 1;
+	matrix_buffer[3] = matrix_buffer[3] << 1;
  800022c:	4b11      	ldr	r3, [pc, #68]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800022e:	78db      	ldrb	r3, [r3, #3]
  8000230:	005b      	lsls	r3, r3, #1
  8000232:	b2da      	uxtb	r2, r3
  8000234:	4b0f      	ldr	r3, [pc, #60]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000236:	70da      	strb	r2, [r3, #3]
-	matrix_buffer[4] <<= 1;
+	matrix_buffer[4] = matrix_buffer[4] << 1;
  8000238:	4b0e      	ldr	r3, [pc, #56]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800023a:	791b      	ldrb	r3, [r3, #4]
  800023c:	005b      	lsls	r3, r3, #1
  800023e:	b2da      	uxtb	r2, r3
  8000240:	4b0c      	ldr	r3, [pc, #48]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000242:	711a      	strb	r2, [r3, #4]
-	matrix_buffer[5] <<= 1;
+	matrix_buffer[5] = matrix_buffer[5] << 1;
  8000244:	4b0b      	ldr	r3, [pc, #44]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000246:	795b      	ldrb	r3, [r3, #5]
  8000248:	005b      	lsls	r3, r3, #1
  800024a:	b2da      	uxtb	r2, r3
  800024c:	4b09      	ldr	r3, [pc, #36]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800024e:	715a      	strb	r2, [r3, #5]
-	matrix_buffer[6] <<= 1;
+	matrix_buffer[6] = matrix_buffer[6] << 1;
  8000250:	4b08      	ldr	r3, [pc, #32]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  8000252:	799b      	ldrb	r3, [r3, #6]
  8000254:	005b      	lsls	r3, r3, #1
  8000256:	b2da      	uxtb	r2, r3
  8000258:	4b06      	ldr	r3, [pc, #24]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800025a:	719a      	strb	r2, [r3, #6]
-	matrix_buffer[7] <<= 1;
+	matrix_buffer[7] = matrix_buffer[7] << 1;
  800025c:	4b05      	ldr	r3, [pc, #20]	@ (8000274 <Shiftleft_Maxtrix+0x74>)
  800025e:	79db      	ldrb	r3, [r3, #7]
  8000260:	005b      	lsls	r3, r3, #1
@@ -304,8 +304,8 @@ int main(void) {
  8000294:	2101      	movs	r1, #1
  8000296:	2000      	movs	r0, #0
  8000298:	f000 f91e 	bl	80004d8 <setTimer>
-	setTimer(1, 1);
- 800029c:	2101      	movs	r1, #1
+	setTimer(1, 100);
+ 800029c:	2164      	movs	r1, #100	@ 0x64
  800029e:	2001      	movs	r0, #1
  80002a0:	f000 f91a 	bl	80004d8 <setTimer>
 	int index = 0;
@@ -343,8 +343,8 @@ int main(void) {
 			Shiftleft_Maxtrix(matrix_buffer);
  80002e2:	4805      	ldr	r0, [pc, #20]	@ (80002f8 <main+0x80>)
  80002e4:	f7ff ff8c 	bl	8000200 <Shiftleft_Maxtrix>
-			setTimer(1, 50);
- 80002e8:	2132      	movs	r1, #50	@ 0x32
+			setTimer(1, 100);
+ 80002e8:	2164      	movs	r1, #100	@ 0x64
  80002ea:	2001      	movs	r0, #1
  80002ec:	f000 f8f4 	bl	80004d8 <setTimer>
 		if (isTimerExpired(0) == 1) {

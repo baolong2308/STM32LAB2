@@ -131,14 +131,14 @@ void updateLEDMatrix(int index) {
 }
 
 void Shiftleft_Maxtrix(uint8_t *buffer) {
-	matrix_buffer[0] <<= 1;
-	matrix_buffer[1] <<= 1;
-	matrix_buffer[2] <<= 1;
-	matrix_buffer[3] <<= 1;
-	matrix_buffer[4] <<= 1;
-	matrix_buffer[5] <<= 1;
-	matrix_buffer[6] <<= 1;
-	matrix_buffer[7] <<= 1;
+	matrix_buffer[0] = matrix_buffer[0] << 1;
+	matrix_buffer[1] = matrix_buffer[1] << 1;
+	matrix_buffer[2] = matrix_buffer[2] << 1;
+	matrix_buffer[3] = matrix_buffer[3] << 1;
+	matrix_buffer[4] = matrix_buffer[4] << 1;
+	matrix_buffer[5] = matrix_buffer[5] << 1;
+	matrix_buffer[6] = matrix_buffer[6] << 1;
+	matrix_buffer[7] = matrix_buffer[7] << 1;
 }
 /* USER CODE END 0 */
 
@@ -177,7 +177,7 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	setTimer(0, 1);
-	setTimer(1, 1);
+	setTimer(1, 100);
 	int index = 0;
 	while (1) {
 		if (isTimerExpired(0) == 1) {
@@ -186,7 +186,7 @@ int main(void) {
 		}
 		if (isTimerExpired(1) == 1) {
 			Shiftleft_Maxtrix(matrix_buffer);
-			setTimer(1, 50);
+			setTimer(1, 100);
 		}
 //		if (isTimerExpired(0) == 1) {
 //			setTimer(0, 50);
