@@ -21,4 +21,7 @@ void timerRun();
 
 void turnoffLEDs() ;
 
+void displayLEDMATRIX(int index);
+
+
 #endif /* INC_SOFTWARE_TIMER_H_ */
