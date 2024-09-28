@@ -104,7 +104,7 @@ void updateLEDMatrix(int index) {
  8000178:	080001d5 	.word	0x080001d5
  800017c:	080001e3 	.word	0x080001e3
 	case 0:
-		displayLEDMATRIX(0,matrix_buffer[0]);
+		displayLEDMATRIX(0, matrix_buffer[0]);
  8000180:	4b1e      	ldr	r3, [pc, #120]	@ (80001fc <updateLEDMatrix+0xb0>)
  8000182:	781b      	ldrb	r3, [r3, #0]
  8000184:	4619      	mov	r1, r3
@@ -113,7 +113,7 @@ void updateLEDMatrix(int index) {
 		break;
  800018c:	e031      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 1:
-		displayLEDMATRIX(1,matrix_buffer[1]);
+		displayLEDMATRIX(1, matrix_buffer[1]);
  800018e:	4b1b      	ldr	r3, [pc, #108]	@ (80001fc <updateLEDMatrix+0xb0>)
  8000190:	785b      	ldrb	r3, [r3, #1]
  8000192:	4619      	mov	r1, r3
@@ -122,7 +122,7 @@ void updateLEDMatrix(int index) {
 		break;
  800019a:	e02a      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 2:
-		displayLEDMATRIX(2,matrix_buffer[2]);
+		displayLEDMATRIX(2, matrix_buffer[2]);
  800019c:	4b17      	ldr	r3, [pc, #92]	@ (80001fc <updateLEDMatrix+0xb0>)
  800019e:	789b      	ldrb	r3, [r3, #2]
  80001a0:	4619      	mov	r1, r3
@@ -131,7 +131,7 @@ void updateLEDMatrix(int index) {
 		break;
  80001a8:	e023      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 3:
-		displayLEDMATRIX(3,matrix_buffer[3]);
+		displayLEDMATRIX(3, matrix_buffer[3]);
  80001aa:	4b14      	ldr	r3, [pc, #80]	@ (80001fc <updateLEDMatrix+0xb0>)
  80001ac:	78db      	ldrb	r3, [r3, #3]
  80001ae:	4619      	mov	r1, r3
@@ -140,7 +140,7 @@ void updateLEDMatrix(int index) {
 		break;
  80001b6:	e01c      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 4:
-		displayLEDMATRIX(4,matrix_buffer[4]);
+		displayLEDMATRIX(4, matrix_buffer[4]);
  80001b8:	4b10      	ldr	r3, [pc, #64]	@ (80001fc <updateLEDMatrix+0xb0>)
  80001ba:	791b      	ldrb	r3, [r3, #4]
  80001bc:	4619      	mov	r1, r3
@@ -149,7 +149,7 @@ void updateLEDMatrix(int index) {
 		break;
  80001c4:	e015      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 5:
-		displayLEDMATRIX(5,matrix_buffer[5]);
+		displayLEDMATRIX(5, matrix_buffer[5]);
  80001c6:	4b0d      	ldr	r3, [pc, #52]	@ (80001fc <updateLEDMatrix+0xb0>)
  80001c8:	795b      	ldrb	r3, [r3, #5]
  80001ca:	4619      	mov	r1, r3
@@ -158,7 +158,7 @@ void updateLEDMatrix(int index) {
 		break;
  80001d2:	e00e      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 6:
-		displayLEDMATRIX(6,matrix_buffer[6]);
+		displayLEDMATRIX(6, matrix_buffer[6]);
  80001d4:	4b09      	ldr	r3, [pc, #36]	@ (80001fc <updateLEDMatrix+0xb0>)
  80001d6:	799b      	ldrb	r3, [r3, #6]
  80001d8:	4619      	mov	r1, r3
@@ -167,7 +167,7 @@ void updateLEDMatrix(int index) {
 		break;
  80001e0:	e007      	b.n	80001f2 <updateLEDMatrix+0xa6>
 	case 7:
-		displayLEDMATRIX(7,matrix_buffer[7]);
+		displayLEDMATRIX(7, matrix_buffer[7]);
  80001e2:	4b06      	ldr	r3, [pc, #24]	@ (80001fc <updateLEDMatrix+0xb0>)
  80001e4:	79db      	ldrb	r3, [r3, #7]
  80001e6:	4619      	mov	r1, r3
@@ -232,17 +232,17 @@ int main(void) {
  800021c:	2101      	movs	r1, #1
  800021e:	2000      	movs	r0, #0
  8000220:	f000 f90a 	bl	8000438 <setTimer>
-	int index=0;
+	int index = 0;
  8000224:	2300      	movs	r3, #0
  8000226:	607b      	str	r3, [r7, #4]
 	while (1) {
-		if (isTimerExpired(0) == 1){
+		if (isTimerExpired(0) == 1) {
  8000228:	2000      	movs	r0, #0
  800022a:	f000 f91d 	bl	8000468 <isTimerExpired>
  800022e:	4603      	mov	r3, r0
  8000230:	2b01      	cmp	r3, #1
  8000232:	d1f9      	bne.n	8000228 <main+0x28>
-			updateLEDMatrix(index++%8);
+			updateLEDMatrix(index++ % 8);
  8000234:	687b      	ldr	r3, [r7, #4]
  8000236:	1c5a      	adds	r2, r3, #1
  8000238:	607a      	str	r2, [r7, #4]
@@ -257,7 +257,7 @@ int main(void) {
  800024e:	2101      	movs	r1, #1
  8000250:	2000      	movs	r0, #0
  8000252:	f000 f8f1 	bl	8000438 <setTimer>
-		if (isTimerExpired(0) == 1){
+		if (isTimerExpired(0) == 1) {
  8000256:	e7e7      	b.n	8000228 <main+0x28>
  8000258:	20000030 	.word	0x20000030
 

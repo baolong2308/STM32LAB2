@@ -102,28 +102,28 @@ uint8_t matrix_buffer[8] = { 0x18, 0x3C, 0x66, 0x66, 0x7E, 0x7E, 0x66, 0x66 };
 void updateLEDMatrix(int index) {
 	switch (index) {
 	case 0:
-		displayLEDMATRIX(0,matrix_buffer[0]);
+		displayLEDMATRIX(0, matrix_buffer[0]);
 		break;
 	case 1:
-		displayLEDMATRIX(1,matrix_buffer[1]);
+		displayLEDMATRIX(1, matrix_buffer[1]);
 		break;
 	case 2:
-		displayLEDMATRIX(2,matrix_buffer[2]);
+		displayLEDMATRIX(2, matrix_buffer[2]);
 		break;
 	case 3:
-		displayLEDMATRIX(3,matrix_buffer[3]);
+		displayLEDMATRIX(3, matrix_buffer[3]);
 		break;
 	case 4:
-		displayLEDMATRIX(4,matrix_buffer[4]);
+		displayLEDMATRIX(4, matrix_buffer[4]);
 		break;
 	case 5:
-		displayLEDMATRIX(5,matrix_buffer[5]);
+		displayLEDMATRIX(5, matrix_buffer[5]);
 		break;
 	case 6:
-		displayLEDMATRIX(6,matrix_buffer[6]);
+		displayLEDMATRIX(6, matrix_buffer[6]);
 		break;
 	case 7:
-		displayLEDMATRIX(7,matrix_buffer[7]);
+		displayLEDMATRIX(7, matrix_buffer[7]);
 		break;
 	default:
 		break;
@@ -166,10 +166,10 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	setTimer(0, 1);
-	int index=0;
+	int index = 0;
 	while (1) {
-		if (isTimerExpired(0) == 1){
-			updateLEDMatrix(index++%8);
+		if (isTimerExpired(0) == 1) {
+			updateLEDMatrix(index++ % 8);
 			setTimer(0, 1);
 		}
 //		if (isTimerExpired(0) == 1) {
