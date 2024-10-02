@@ -1,0 +1,2 @@
+../Core/Src/display.c:10:6:turnoffLEDs	8	static
+../Core/Src/display.c:16:6:display7SEG	16	static
