@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include"software_timer.h"
+#include"display.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -150,11 +151,8 @@ int main(void) {
 				hour = 0;
 			}
 			updateClockBuffer();
-			update7SEG(index_led);
-			index_led++;
-			if (index_led >= 4) {
-				index_led = 0;
-			}
+			update7SEG(index_led++ % 4);
+
 		}
 		if (isTimerExpired(1) == 1) {
 			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
@@ -282,7 +280,6 @@ static void MX_GPIO_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
-
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
