@@ -146,7 +146,7 @@ int main(void) {
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	setTimer0(1000);
-
+	int index = 0;
 	while (1) {
 		second++;
 		if (second >= 60) {
@@ -163,6 +163,7 @@ int main(void) {
 			hour = 0;
 		}
 		updateClockBuffer();
+		update7SEG(index++ % 4);
 		HAL_Delay(1000);
 		/* USER CODE BEGIN 3 */
 		if (timer0_flag == 1) {
