@@ -1227,7 +1227,7 @@ static void MX_GPIO_Init(void) {
 /* USER CODE BEGIN 4 */
 
 int counter_dot = 100;
-int counter_led = 100;
+int counter_led = 1;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
  8000838:	b580      	push	{r7, lr}
  800083a:	b082      	sub	sp, #8
