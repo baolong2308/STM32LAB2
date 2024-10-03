@@ -134,7 +134,7 @@ int main(void) {
 	setTimer(1, 100);
 	while (1) {
 		if (isTimerExpired(0) == 1) {
-			setTimer(0, 50);
+			setTimer(0, 25);
 
 			second++;
 			if (second >= 60) {

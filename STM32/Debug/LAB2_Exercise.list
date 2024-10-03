@@ -870,8 +870,8 @@ int main(void) {
  8000630:	4603      	mov	r3, r0
  8000632:	2b01      	cmp	r3, #1
  8000634:	d138      	bne.n	80006a8 <main+0xa8>
-			setTimer(0, 50);
- 8000636:	2132      	movs	r1, #50	@ 0x32
+			setTimer(0, 25);
+ 8000636:	2119      	movs	r1, #25
  8000638:	2000      	movs	r0, #0
  800063a:	f000 f93d 	bl	80008b8 <setTimer>
 
